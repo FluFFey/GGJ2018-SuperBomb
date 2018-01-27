@@ -8,12 +8,12 @@ public class BombController : MonoBehaviour {
 
     private Rigidbody rb;
     private bool stuck;
-    public List<Vector3> prevVelocities = new List<Vector3>();
 
     public TimeStopController TSC;
 
     public List<Vector3> newPositions = new List<Vector3>();
     public float timer;
+    public bool useGravity = false;
 
     // Use this for initialization
     void Start () {
@@ -41,7 +41,14 @@ public class BombController : MonoBehaviour {
         if (stuck)
         {
             rb.velocity = Vector3.zero;
-            rb.useGravity = true;
+            useGravity = true;
+        }
+
+        //print(rb.velocity + "/" + (Physics.gravity * TimeStopController.getTimeScale()));
+
+        if (useGravity)
+        {
+            rb.AddForce(Physics.gravity * TimeStopController.getTimeScale());
         }
     }
 
@@ -51,6 +58,13 @@ public class BombController : MonoBehaviour {
         {
             rb.velocity = Vector3.zero;
             stuck = true;
+        }
+        else if (!other.gameObject.name.Contains("GunPrefab") && !other.gameObject.name.Contains("PlayerPrefab"))
+        {
+            print("Collider: " + other.gameObject.name);
+            newPositions = new List<Vector3>();
+            useGravity = true;
+            rb.isKinematic = false;
         }
     }
 
@@ -63,11 +77,29 @@ public class BombController : MonoBehaviour {
         {
             if (col && col.tag == "Enemy") // if object has the right tag...
             {
-                //EnemyController EC = col.GetComponent<EnemyController>();
-                //EC.dealDmg(1); //Deal 1 dmg, assuming regular enemies have 1hp, bigger have 2
+                //MonsterScript MS = col.GetComponent<MonsterScript>();
+                //MS.dealDmg(1); //Deal 1 dmg, assuming regular enemies have 1hp, bigger have 2
                 Destroy(col.gameObject);
+            }
+            if(col && col.gameObject.name.Contains("BombPrefab") && col.gameObject != this.gameObject)
+            {
+                print("hit another bomb!");
+                //col.GetComponent<BombController>().recieveTrans();
+                col.GetComponent<BombController>().startColl();
             }
         }
         Destroy(this.gameObject);
+    }
+
+    public void startColl()
+    {
+        StartCoroutine(collateral());
+    }
+
+    public IEnumerator collateral()
+    {
+        yield return new WaitForSeconds(0.1f);
+        print("Done with waitin");
+        recieveTrans();
     }
 }

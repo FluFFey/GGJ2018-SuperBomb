@@ -40,7 +40,7 @@ public class BombPathController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Floor")
+        if (other.gameObject.tag == "Floor" || other.gameObject.tag == "LevelDesign")
         {
             rb.velocity = Vector3.zero;
             stuck = true;

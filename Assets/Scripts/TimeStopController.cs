@@ -7,7 +7,7 @@ public class TimeStopController : MonoBehaviour{
     public static float currentTime = 0;
     private static float prevTime = 0;
     public float deltaTimeScale;
-    public float timeScale = 1;
+    public static float timeScale = 1;
     public List<float> prevScales = new List<float>();
 
     public static TimeStopController instance;
@@ -65,7 +65,7 @@ public class TimeStopController : MonoBehaviour{
         }
     }
 
-    public float getTimeScale()
+    public static float getTimeScale()
     {
         return timeScale;
     }
