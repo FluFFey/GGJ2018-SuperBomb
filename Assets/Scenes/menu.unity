@@ -113,6 +113,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &144471842 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1046425801436736, guid: 9c0eb1478e48d9d42aba02c7c615df84,
+    type: 2}
+  m_PrefabInternal: {fileID: 387814899}
+--- !u!114 &144471843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 144471842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1001 &387814899
 Prefab:
   m_ObjectHideFlags: 0
@@ -223,22 +250,22 @@ Prefab:
     - target: {fileID: 224348346677396416, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 149.30164
+      value: 42.95405
       objectReference: {fileID: 0}
     - target: {fileID: 224348346677396416, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -27.234016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224348346677396416, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 298.60327
+      value: 85.9081
       objectReference: {fileID: 0}
     - target: {fileID: 224348346677396416, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 54.468033
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224362589903725500, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
@@ -253,22 +280,22 @@ Prefab:
     - target: {fileID: 224362589903725500, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 149.30164
+      value: 42.95405
       objectReference: {fileID: 0}
     - target: {fileID: 224362589903725500, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -83.70205
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224362589903725500, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 298.60327
+      value: 85.9081
       objectReference: {fileID: 0}
     - target: {fileID: 224362589903725500, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 54.468033
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224444998920424352, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
@@ -283,24 +310,46 @@ Prefab:
     - target: {fileID: 224444998920424352, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 149.30164
+      value: 42.95405
       objectReference: {fileID: 0}
     - target: {fileID: 224444998920424352, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -140.17007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224444998920424352, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 298.60327
+      value: 85.9081
       objectReference: {fileID: 0}
     - target: {fileID: 224444998920424352, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 54.468033
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114327745799434280, guid: 9c0eb1478e48d9d42aba02c7c615df84,
+        type: 2}
+      propertyPath: titleMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: c2c81a8fcd6757b48a35657a01d74996, type: 3}
+    - target: {fileID: 114327745799434280, guid: 9c0eb1478e48d9d42aba02c7c615df84,
+        type: 2}
+      propertyPath: mainMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: c2c81a8fcd6757b48a35657a01d74996, type: 3}
+    - target: {fileID: 82300521192449896, guid: 9c0eb1478e48d9d42aba02c7c615df84,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c2c81a8fcd6757b48a35657a01d74996, type: 3}
+    - target: {fileID: 82300521192449896, guid: 9c0eb1478e48d9d42aba02c7c615df84,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114327745799434280, guid: 9c0eb1478e48d9d42aba02c7c615df84, type: 2}
+    - {fileID: 82300521192449896, guid: 9c0eb1478e48d9d42aba02c7c615df84, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9c0eb1478e48d9d42aba02c7c615df84, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &874143932
