@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[ExecuteInEditMode]
-public class WalkableTile : MonoBehaviour {
+ [ExecuteInEditMode]
+public class Tile : MonoBehaviour {
     public enum tileType
     {
         HORIZONTAL,
@@ -50,11 +50,14 @@ public class WalkableTile : MonoBehaviour {
             case tileType.CROSS_SECTION:
                 GetComponent<MeshRenderer>().sharedMaterial.SetFloat("_IsCrossSection", 1);
                 break;
+            default:
+                break;
         }
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+        GetComponent<MeshRenderer>().sharedMaterial.SetFloat("_ScaledTime", TimeStopController.currentTime);
+    }
 }

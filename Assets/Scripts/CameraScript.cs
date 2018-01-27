@@ -17,6 +17,7 @@ public class CameraScript : MonoBehaviour {
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
+        scanLinesMat.SetFloat("_ScaledTime", TimeStopController.currentTime);
         Graphics.Blit(source, destination, scanLinesMat);
     }
 

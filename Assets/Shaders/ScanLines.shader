@@ -8,6 +8,7 @@ Shader "ShowPos Effect Shader"
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_Color("Color", Color) = (0,0,0,1) 
 		_LinesSize("LinesSize", Range(1,10)) = 1 
+		_ScaledTime("ScaledTime", float) = 1
     }
  
     SubShader
@@ -26,6 +27,7 @@ Shader "ShowPos Effect Shader"
 			fixed4 _Color;
 			half _LinesSize;
 			uniform sampler2D _MainTex;
+			float _ScaledTime;
 
             struct appdata
             {
@@ -53,7 +55,7 @@ Shader "ShowPos Effect Shader"
 				float4 c = tex2D(_MainTex, i.uv);
 
 				//if (i.uv.x %5 ==0) discard;
-                float2 uv = (i.uv.y+_Time*0.5f) / i.uv.w;
+                float2 uv = (i.uv.y+_ScaledTime*0.5f) / i.uv.w;
 				if((int)(uv*_ScreenParams.y/floor(_LinesSize))%2==0)
 				{
 					return c;

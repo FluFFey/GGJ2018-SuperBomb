@@ -33,9 +33,9 @@ public class BombPickup : MonoBehaviour
     private void Update()
     {
         Vector3 newPos = transform.position;
-        newPos.y = startY + Mathf.Sin(Time.timeSinceLevelLoad * 3) * 0.3f;
+        newPos.y = startY + Mathf.Sin(TimeStopController.currentTime * 3) * 0.3f;
         transform.position = newPos;
-        transform.Rotate(Vector3.up * 45 * Time.deltaTime);
+        transform.Rotate(Vector3.up * 45 * TimeStopController.instance.deltaTimeScale);
     }
 
     private void OnTriggerEnter(Collider collider)
