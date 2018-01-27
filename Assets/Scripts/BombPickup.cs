@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombPickup : MonoBehaviour {
+public class BombPickup : MonoBehaviour
+{
 
     public float lifeTime;
     public float diameter;
@@ -32,16 +33,17 @@ public class BombPickup : MonoBehaviour {
     private void Update()
     {
         Vector3 newPos = transform.position;
-        newPos.y = startY+Mathf.Sin(Time.timeSinceLevelLoad*3)*0.3f;
+        newPos.y = startY + Mathf.Sin(Time.timeSinceLevelLoad * 3) * 0.3f;
         transform.position = newPos;
-        transform.Rotate(Vector3.up * 45*Time.deltaTime);
+        transform.Rotate(Vector3.up * 45 * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag =="Player")
+        if (collider.gameObject.tag == "Player")
         {
-
+            Destroy(gameObject);
+            GameController.instance.gainBombs(1);
         }
     }
 
