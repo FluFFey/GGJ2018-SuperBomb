@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        timeSinceLastSpawn = -2.0f; //set it to negative to delay first spawns
+        timeSinceLastSpawn = 4.0f; //set it manipulate first spawn
 	}
 	
 	// Update is called once per frame
@@ -19,9 +19,9 @@ public class EnemySpawner : MonoBehaviour {
         if (timeSinceLastSpawn > spawnInterval)
         {
             timeSinceLastSpawn = 0.0f;
-            if (spawnInterval > 1.0f)
+            if (spawnInterval > 1.2f)
             { 
-                spawnInterval *= 0.95f;
+                spawnInterval *= 0.97f;
             }
             Instantiate(enemGO, transform).transform.localScale = new Vector3(2, 1, 2);
         }

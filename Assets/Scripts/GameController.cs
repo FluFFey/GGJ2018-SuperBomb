@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour {
     void Start ()
     {
         livesText.text = "Lives: " + playerLives;
-        livesText.text = "Bombs: " + remainingBombs;
+        bombsText.text = "Bombs: " + remainingBombs;
     }
 	
     public void removePlayerLives(int amountToRemove)

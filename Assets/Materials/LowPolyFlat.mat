@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: LowPolyFlat
-  m_Shader: {fileID: 4800000, guid: 25a59405ead9d16499c18bc27b73b501, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8deecd651f9f8714c84d2a198e9b69d5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
