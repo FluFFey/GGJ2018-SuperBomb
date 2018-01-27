@@ -26,9 +26,16 @@ public class PlayerController : MonoBehaviour {
         else if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             print("Mouse0: Bomb-Shoot");
-            gunPrefab.GetComponent<GunController>().throwBomb();
-            //same as above
-            targetScale = 0.5f;
+            if (GameController.instance.haveBombs())
+            {
+                gunPrefab.GetComponent<GunController>().throwBomb();
+                //same as above
+                targetScale = 0.5f;
+                GameController.instance.spendBombs(1);
+            }
+            
+
+            
         }
 
         if (Input.GetKey(KeyCode.Mouse1))

@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 
     int playerLives = 1;
+    int remainingBombs = 5;
     public Text livesText;
+    public Text bombsText;
     public static GameController instance;
     void Awake()
     {
@@ -24,6 +27,7 @@ public class GameController : MonoBehaviour {
     void Start ()
     {
         livesText.text = "Lives: " + playerLives;
+        livesText.text = "Bombs: " + remainingBombs;
     }
 	
     public void removePlayerLives(int amountToRemove)
@@ -36,8 +40,25 @@ public class GameController : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
-	void Update () {
+    internal bool haveBombs()
+    {
+        return remainingBombs > 0;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
+
+    internal void spendBombs(int v)
+    {
+        remainingBombs -= v;
+        bombsText.text = "Bombs: " + remainingBombs;
+    }
+
+    internal void gainBombs(int v)
+    {
+        remainingBombs += v;
+        bombsText.text = "Bombs: " + remainingBombs;
+    }
 }
