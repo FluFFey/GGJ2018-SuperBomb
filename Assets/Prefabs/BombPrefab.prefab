@@ -112,6 +112,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exRadius: 5
+  prevVelocities: []
+  TSC: {fileID: 0}
+  startVelocity:
+  - {x: 9.8, y: 1.6, z: 1.2}
+  - {x: 9.8, y: 1.6, z: 1.2}
+  - {x: 9.8, y: 1.4, z: 1.1}
+  - {x: 9.7, y: 1.2, z: 1.1}
+  - {x: 9.6, y: 0.8, z: 1.1}
+  startVal: {x: 0, y: 0, z: 0}
+  addCount: 30
+  startValFactor: 7.5
 --- !u!135 &135850463514954314
 SphereCollider:
   m_ObjectHideFlags: 1

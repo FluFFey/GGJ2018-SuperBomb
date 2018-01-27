@@ -6,6 +6,7 @@ public class GunController : MonoBehaviour {
 
     public GameObject transPrefab;
     public GameObject bombPrefab;
+    public GameObject bombPatherPrefab;
     public GameObject gunMuzzle;
 
     public float transCD;
@@ -19,6 +20,8 @@ public class GunController : MonoBehaviour {
     public GameObject lineDot;
     public int predictSteps;
 
+    public TimeStopController TSC;
+
     // Use this for initialization
     void Start () {
     }
@@ -27,11 +30,11 @@ public class GunController : MonoBehaviour {
 	void Update () {
         if(currentTransCD > 0)
         {
-            currentTransCD -= Time.deltaTime;
+            currentTransCD -= TimeStopController.deltaTime();
         }
         if (currentBombCD > 0)
         {
-            currentBombCD -= Time.deltaTime;
+            currentBombCD -= TimeStopController.deltaTime();
         }
     }
 
@@ -43,7 +46,9 @@ public class GunController : MonoBehaviour {
             GameObject trans = Instantiate(transPrefab, gunMuzzle.transform.position, Quaternion.identity);
             trans.transform.rotation = this.gameObject.transform.rotation;
             trans.GetComponent<Rigidbody>().AddForce(transform.forward * transShootForce);
+            trans.GetComponent<TransController>().startVal = transform.forward;
             currentTransCD = transCD;
+            timeSkip(0.5f, 10);
             return true;
         }
         return false;
@@ -55,8 +60,12 @@ public class GunController : MonoBehaviour {
         {
             //throw
             GameObject bomb = Instantiate(bombPrefab, gunMuzzle.transform.position, Quaternion.identity);
-            bomb.GetComponent<Rigidbody>().AddForce(transform.forward * bombThrowForce);
+            GameObject bombPather = Instantiate(bombPatherPrefab, gunMuzzle.transform.position, Quaternion.identity);
+            bombPather.GetComponent<BombPathController>().myBomb = bomb;
+            //bomb.GetComponent<Rigidbody>().AddForce(transform.forward * bombThrowForce);
+            bombPather.GetComponent<Rigidbody>().AddForce(transform.forward * bombThrowForce);
             currentBombCD = bombCD;
+            timeSkip(0.5f, 10);
             return true;
         }
         return false;
@@ -66,12 +75,17 @@ public class GunController : MonoBehaviour {
     {
         destroyDots();
 
-        Vector3 veloc = transform.forward * bombThrowForce /60;
+        Vector3 veloc = transform.forward * bombThrowForce /50;
         Vector3[] plots = Plot(bombPrefab.GetComponent<Rigidbody>(), gunMuzzle.transform.position, veloc, predictSteps);
         foreach(Vector3 v3 in plots)
         {
             Instantiate(lineDot, v3, this.gameObject.transform.rotation);
         }
+    }
+
+    private void timeSkip(float targetScale, int lerpSpeed)
+    {
+        TSC.setTimeScale(Mathf.Lerp(TSC.getTimeScale(), targetScale, Time.deltaTime * lerpSpeed));
     }
 
     public void destroyDots()

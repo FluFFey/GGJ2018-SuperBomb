@@ -53,3 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   livesText: {fileID: 0}
   bombsText: {fileID: 0}
+  crosshair: {fileID: 0}
+  gameOverObj: {fileID: 0}
+  pauseGameObj: {fileID: 0}
+  select1: {fileID: 0}
+  select2: {fileID: 0}

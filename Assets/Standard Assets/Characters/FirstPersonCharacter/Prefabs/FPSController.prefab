@@ -400,14 +400,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382058438977962}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.043619405, z: 0, w: 0.9990483}
   m_LocalPosition: {x: 0.7229, y: -0.23500001, z: 0.765}
   m_LocalScale: {x: 0.26573193, y: 0.2829898, z: 0.62402993}
   m_Children:
   - {fileID: 4806818757556682}
   m_Father: {fileID: 400002}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -5, z: 0}
 --- !u!4 &4806818757556682
 Transform:
   m_ObjectHideFlags: 1
@@ -542,13 +542,16 @@ MonoBehaviour:
   transPrefab: {fileID: 1145922016780870, guid: e3e8215f1ca012b46afa9b6eada28402,
     type: 2}
   bombPrefab: {fileID: 1429322451389740, guid: 7b3fe5fa989481445b9ef09bba536757, type: 2}
+  bombPatherPrefab: {fileID: 1933638454153144, guid: 6baf0fd6e32fbd344a6615fdd9a818b5,
+    type: 2}
   gunMuzzle: {fileID: 1264775185645216}
-  transCD: 1
-  bombCD: 1
+  transCD: 0
+  bombCD: 0.2
   transShootForce: 500
   bombThrowForce: 500
   lineDot: {fileID: 1983153100817750, guid: be298aa718bb19f4ea98b23a2d5ff294, type: 2}
   predictSteps: 100
+  TSC: {fileID: 0}
 --- !u!114 &114769801196868256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -561,6 +564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunPrefab: {fileID: 1382058438977962}
+  TSC: {fileID: 0}
+  GC: {fileID: 0}
 --- !u!135 &135203524177937804
 SphereCollider:
   m_ObjectHideFlags: 1
