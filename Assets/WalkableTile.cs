@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//[ExecuteInEditMode]
+[ExecuteInEditMode]
 public class WalkableTile : MonoBehaviour {
     public enum tileType
     {

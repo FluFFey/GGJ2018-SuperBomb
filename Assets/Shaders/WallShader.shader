@@ -4,7 +4,7 @@
 	{
 		//_MainTex ("Texture", 2D) = "white" {}
 		_StripeColor ("Color", Color) = (0,0,0,0)
-		//[Toggle]_IsCornerPiece("Corner", Float) = 0
+		[Toggle]_IsDoor("IsDoor", Float) = 0
 		//[Toggle]_CornerLU("CornerLU", Float) = 0
 		//[Toggle]_CornerLD("CornerLD", Float) = 0
 		//[Toggle]_CornerRU("CornerRU", Float) = 0
@@ -43,13 +43,8 @@
 
 			//sampler2D _MainTex;
 			fixed4 _StripeColor;
-			float _CornerLU;
-			float _CornerLD;
-			float _CornerRU;
-			float _CornerRD;
-			float _HorizontalLine;
-			float _VerticalLine;
-			float _IsCrossSection;
+			float _IsDoor;
+
 			v2f vert (appdata v)
 			{
 				v2f o;
@@ -67,6 +62,58 @@
 				// sample the texture
 				_StripeColor*= ((_SinTime.w+1)/2.0f) + fixed4(_StripeColor.x,_StripeColor.y*0.9f,_StripeColor.z*0.9f,_StripeColor.a);
 				
+				if (_IsDoor)
+				{
+					if (i.posWorld.y > 2.4f && i.posWorld.y < 2.7f && (xMod > 1.8f && xMod < 3.2f))
+					{
+						return _StripeColor;	
+					}
+					
+					if (i.posWorld.y > 1.7f && i.posWorld.y < 2.0f && (xMod > 1.4f && xMod < 3.6f))
+					{
+						return _StripeColor;	
+					}
+					
+					if (i.posWorld.y > 1.7f && i.posWorld.y < 4.0f && 
+					xMod > 1.2 &&  xMod < 1.5)
+					{
+						return _StripeColor;
+					}
+					
+					if (i.posWorld.y > 2.5f && i.posWorld.y < 4.6f && 
+					xMod > 1.8 &&  xMod < 2.1)
+					{
+						return _StripeColor;
+					}
+
+					if (i.posWorld.y > 1.7f && i.posWorld.y < 4.0f && 
+					xMod > 3.5 &&  xMod < 3.8)
+					{
+						return _StripeColor;
+					}
+					if (i.posWorld.y > 2.5f && i.posWorld.y < 4.6f && 
+					xMod > 2.9 &&  xMod < 3.2)
+					{
+						return _StripeColor;
+					}
+
+					if (i.posWorld.y > 4.3f && i.posWorld.y < 4.6f && (xMod < 1.8f || xMod > 3.2f))
+					{
+						return _StripeColor;	
+					}
+					
+					if (i.posWorld.y > 3.7f && i.posWorld.y < 4.0f && (xMod < 1.4f || xMod > 3.6f))
+					{
+						return _StripeColor;	
+					}
+
+
+					return fixed4(0,0,0,0);
+				}
+
+
+
+
 				if (i.posWorld.y > 1.7f && i.posWorld.y < 2.0f ||
 					i.posWorld.y > 2.4f && i.posWorld.y < 2.7f
 				)

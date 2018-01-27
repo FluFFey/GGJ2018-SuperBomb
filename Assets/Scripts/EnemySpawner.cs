@@ -11,7 +11,12 @@ public class EnemySpawner : MonoBehaviour {
 	void Start ()
     {
         timeSinceLastSpawn = 4.0f; //set it manipulate first spawn
-	}
+        transform.GetChild(0).GetComponent<MeshRenderer>().material = new Material(transform.GetChild(0).GetComponent<MeshRenderer>().material);
+        //GetComponentInChildren<MeshRenderer>().material = new Material(GetComponentInChildren<MeshRenderer>().material);
+        //print(GetComponentInChildren<MeshRenderer>().gameObject);
+        transform.GetChild(0).GetComponent<MeshRenderer>().material.SetFloat("_IsDoor", 1);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
