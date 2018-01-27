@@ -2,27 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeStopController : MonoBehaviour {
+public class TimeStopController : MonoBehaviour{
 
-    public float currentTime = 0;
-    private float prevTime = 0;
-
-    private List<float> prevScales = new List<float>();
-
+    public static float currentTime = 0;
+    private static float prevTime = 0;
+    public float deltaTimeScale;
     public float timeScale = 1;
+    public List<float> prevScales = new List<float>();
 
-    public GameObject player;
+    public static TimeStopController instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            DestroyObject(gameObject);
+        }
+        DontDestroyOnLoad(this);
+    }
+
+    private void Start()
+    {
+        prevScales.Add(1);
+        prevScales.Add(1);
+    }
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
         prevTime = currentTime;
         currentTime += Time.deltaTime * timeScale;
 
-        if(prevScales.Count > 2)
+        if(timeScale != prevScales[1])
+        {
+            prevScales.Add(timeScale);
+        }
+
+        if (prevScales.Count > 2)
         {
             prevScales.RemoveAt(0);
         }
-        prevScales.Add(timeScale);
+
+        deltaTimeScale = prevScales[0] - prevScales[1];
     }
 
     public void setTimeScale(float value)
@@ -46,14 +70,14 @@ public class TimeStopController : MonoBehaviour {
         return timeScale;
     }
 
-    public float deltaTime() //Tiden som er gått
+    public static float deltaTime() //Tiden som er gått
     {
-        return (currentTime - prevTime) * timeScale;
+        return (currentTime - prevTime);
     }
 
     public bool isRising() //deltaTime is gettin smaller
     {
-        if (prevScales[0] - prevScales[1] > 0) // 0 - 0.1 = -0.1 vs.  0.1 - 0
+        if (prevScales[0] - prevScales[1] >= 0) // 0 - 0.1 = -0.1 vs.  0.1 - 0
         {
             return true;
         }
@@ -62,6 +86,6 @@ public class TimeStopController : MonoBehaviour {
 
     public float getTime()
     {
-        return currentTime * timeScale;
+        return currentTime;
     }
 }

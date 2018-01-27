@@ -40,7 +40,7 @@ public static class Tools
         //float oldPos = 0.0f;
         float newPos = 0.0f;
 
-        for (float i = 0; i < duration; i += Time.deltaTime)
+        for (float i = 0; i < duration; i += TimeStopController.deltaTime())
         {
             //float pd = 0.25f + (i * 0.75f / duration); //TODO: make this line better mebbe
             float pd = i / duration; //TODO: ???

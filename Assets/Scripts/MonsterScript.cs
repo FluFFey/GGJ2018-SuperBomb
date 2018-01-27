@@ -102,10 +102,10 @@ public class MonsterScript : MonoBehaviour {
                 currentDirection = i;
                 target = transform.position + newPosChecklist[currentDirection % newPosChecklist.Length] * tileLength;
                 StartCoroutine(Tools.moveObject(
-                    gameObject, 
-                    newPosChecklist[currentDirection], 
-                    3.0f, 
-                    10, 
+                    gameObject,
+                    newPosChecklist[currentDirection],
+                    3.0f,
+                    10,
                     Tools.INTERPOLATION_TYPE.LERP
                     ));
                 endOfPath = false;

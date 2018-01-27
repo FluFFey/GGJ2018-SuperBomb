@@ -8,40 +8,41 @@ public class BombController : MonoBehaviour {
 
     private Rigidbody rb;
     private bool stuck;
-    private List<Vector3> prevVelocities = new List<Vector3>();
+    public List<Vector3> prevVelocities = new List<Vector3>();
 
     public TimeStopController TSC;
 
-	// Use this for initialization
-	void Start () {
+    public List<Vector3> newPositions = new List<Vector3>();
+    public float timer;
+
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
         TSC = GameObject.Find("TimeStopController").GetComponent<TimeStopController>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (stuck)
-        {
-            rb.velocity = Vector3.zero;
-        }
 
-        rb.AddForce(Physics.gravity * TSC.getTimeScale()); //Instead of gravity
-
-        if(TSC.isRising())
+    // Update is called once per frame
+    void Update () {
+        //each frame, set my position to 
+        if (timer >= 0.01667f)
         {
-            prevVelocities.Add(rb.velocity);
+            if(newPositions.Count > 0)
+            {
+                transform.position = newPositions[0];
+                newPositions.RemoveAt(0);
+            }
+            timer += TimeStopController.deltaTime() - 0.01667f;
         }
         else
         {
-            print("rising?");
-            if(prevVelocities.Count > 0)
-            {
-                rb.velocity = prevVelocities[prevVelocities.Count - 1];
-                prevVelocities.RemoveAt(prevVelocities.Count - 1);
-            }
+            timer += TimeStopController.deltaTime();
         }
 
-        rb.velocity *= TSC.getTimeScale(); //Stop mid air
+        if (stuck)
+        {
+            rb.velocity = Vector3.zero;
+            rb.useGravity = true;
+        }
     }
 
     private void OnCollisionEnter(Collision other)

@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timeSinceLastSpawn += Time.deltaTime;
+        timeSinceLastSpawn += TimeStopController.deltaTime();
         if (timeSinceLastSpawn > spawnInterval)
         {
             timeSinceLastSpawn = 0.0f;
