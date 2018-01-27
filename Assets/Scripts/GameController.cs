@@ -29,7 +29,6 @@ public class GameController : MonoBehaviour {
         {
             DestroyObject(gameObject);
         }
-        DontDestroyOnLoad(this);
     }
     
     // Use this for initialization
@@ -38,8 +37,6 @@ public class GameController : MonoBehaviour {
         Time.timeScale = 1;
         livesText.text = "Lives: " + playerLives;
         bombsText.text = "Bombs: " + remainingBombs;
-
-        //gameOver();
     }
 	
     public void removePlayerLives(int amountToRemove)
@@ -107,6 +104,16 @@ public class GameController : MonoBehaviour {
                 {
                     select1.SetActive(false);
                     select2.SetActive(true);
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.Return)){
+                if (select1.activeSelf)
+                {
+                    mainMenuClick();
+                }
+                else if (select2.activeSelf)
+                {
+                    retryClick();
                 }
             }
         }
