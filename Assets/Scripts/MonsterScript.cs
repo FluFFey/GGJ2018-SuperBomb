@@ -56,7 +56,6 @@ public class MonsterScript : MonoBehaviour {
             
             if ((transform.position - target).magnitude < 0.01f)
             {
-                print("findingnewtarget");
                 findNewTarget();
             }
         }
