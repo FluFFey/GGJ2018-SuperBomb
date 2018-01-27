@@ -7,7 +7,8 @@ public static class Tools
     public enum INTERPOLATION_TYPE
     {
         LERP,
-        SMOOTH
+        SMOOTH,
+        EXPONENTIAL
     }
 
     public static float lerp(float pd) //pd = percentage done
@@ -19,6 +20,11 @@ public static class Tools
         return pd * pd * (3 - 2 * pd);
     }
 
+    public static float exponentialInterpolation(float pd) //pd = percentage done
+    {
+        return pd * pd;
+    }
+
     private static System.Func<float, float> getInterpolationFunc(INTERPOLATION_TYPE type)
     {
         switch (type)
@@ -27,6 +33,8 @@ public static class Tools
                 return lerp;
             case INTERPOLATION_TYPE.SMOOTH:
                 return smoothInterpolation;
+            case INTERPOLATION_TYPE.EXPONENTIAL:
+                return exponentialInterpolation;
             default:
                 return smoothInterpolation;
         }

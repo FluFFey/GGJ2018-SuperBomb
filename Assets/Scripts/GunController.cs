@@ -20,10 +20,11 @@ public class GunController : MonoBehaviour {
     public GameObject lineDot;
     public int predictSteps;
 
-    public TimeStopController TSC;
+    private TimeStopController TSC;
 
     // Use this for initialization
     void Start () {
+        TSC = TimeStopController.instance.GetComponent<TimeStopController>();
     }
 	
 	// Update is called once per frame

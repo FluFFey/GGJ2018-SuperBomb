@@ -6,8 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
-    int playerLives = 1;
-    int remainingBombs = 15;
+    public int playerLives;
+    public int remainingBombs;
     public Text livesText;
     public Text bombsText;
     public static GameController instance;
@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour {
         livesText.text = "Lives: " + playerLives;
         bombsText.text = "Bombs: " + remainingBombs;
 
-        gameOver();
+        //gameOver();
     }
 	
     public void removePlayerLives(int amountToRemove)
