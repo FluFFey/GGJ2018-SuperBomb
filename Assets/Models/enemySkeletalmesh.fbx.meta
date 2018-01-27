@@ -962,7 +962,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
-    optimizeGameObjects: 0
+    optimizeGameObjects: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -976,7 +976,20 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - Group/Main/DeformationSystem/Root_M
+    - Group/Main/DeformationSystem/Root_M/Hip_L
+    - Group/Main/DeformationSystem/Root_M/Hip_R
+    - Group/Main/DeformationSystem/Root_M/Spine1_M
+    - Group/Main/DeformationSystem/Root_M/Hip_L/Knee_L
+    - Group/Main/DeformationSystem/Root_M/Hip_R/Knee_R
+    - Group/Main/DeformationSystem/Root_M/Hip_L/Knee_L/Ankle_L
+    - Group/Main/DeformationSystem/Root_M/Hip_R/Knee_R/Ankle_R
+    - Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/Head_M
+    - Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Scapula_L/Shoulder_L
+    - Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L
+    - Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Scapula_R/Shoulder_R
+    - Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R
     extraUserProperties: []
     clipAnimations: []
     isReadable: 1

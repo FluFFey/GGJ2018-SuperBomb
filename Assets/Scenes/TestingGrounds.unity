@@ -455,6 +455,11 @@ Prefab:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1003891007}
+    - target: {fileID: 114445664156429280, guid: b65e422a8c6535046ad17317a6066106,
+        type: 2}
+      propertyPath: playerLives
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b65e422a8c6535046ad17317a6066106, type: 2}
   m_IsPrefabParent: 0

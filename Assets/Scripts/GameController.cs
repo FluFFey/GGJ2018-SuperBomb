@@ -29,16 +29,14 @@ public class GameController : MonoBehaviour {
         {
             DestroyObject(gameObject);
         }
-        DontDestroyOnLoad(this);
     }
     
     // Use this for initialization
     void Start ()
     {
+        Time.timeScale = 1;
         livesText.text = "Lives: " + playerLives;
         bombsText.text = "Bombs: " + remainingBombs;
-
-        //gameOver();
     }
 	
     public void removePlayerLives(int amountToRemove)
@@ -136,7 +134,6 @@ public class GameController : MonoBehaviour {
 
     public void mainMenuClick()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
 

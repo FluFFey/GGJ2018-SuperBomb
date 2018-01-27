@@ -62,22 +62,9 @@ public class MeleeMonsterScript : MonoBehaviour {
         //rb.AddForce(Physics.gravity * TimeStopController.timeScale);
 	}
 
-    void attack()
-    {
-        print("try1");
-        Collider[] cols = Physics.OverlapSphere(transform.position, minDistance);
-        foreach (Collider col in cols)
-        {
-            if (col && col.tag == "Player") // if object has the right tag...
-            {
-                print("gettin attkid");
-                col.GetComponent<PlayerController>().removeLife();
-            }
-        }
-    }
-
     private void OnCollisionStay(Collision other)
     {
+        print("Monster collided with: " + other.gameObject.name);
         if (other.gameObject.name.Contains("Jumpable"))
         {
             //transform.position += jumpVector;
