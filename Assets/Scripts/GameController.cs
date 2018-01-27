@@ -35,7 +35,6 @@ public class GameController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        Time.timeScale = 1;
         livesText.text = "Lives: " + playerLives;
         bombsText.text = "Bombs: " + remainingBombs;
 
@@ -109,6 +108,16 @@ public class GameController : MonoBehaviour {
                     select2.SetActive(true);
                 }
             }
+            else if (Input.GetKeyDown(KeyCode.Return)){
+                if (select1.activeSelf)
+                {
+                    mainMenuClick();
+                }
+                else if (select2.activeSelf)
+                {
+                    retryClick();
+                }
+            }
         }
         timer.text = TimeStopController.currentTime.ToString("F2");
 	}
@@ -127,6 +136,7 @@ public class GameController : MonoBehaviour {
 
     public void mainMenuClick()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
 

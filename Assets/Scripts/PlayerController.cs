@@ -61,10 +61,18 @@ public class PlayerController : MonoBehaviour {
         TSC.setTimeScale(Mathf.Lerp(TimeStopController.getTimeScale(), targetScale, Time.deltaTime * lerpSpeed));
     }
 
-    private void OnCollisionEnter(Collision other)
+    public void removeLife()
     {
-        if (other.gameObject.name.Contains("Katana")){ //Thinking the weapon is gameobject of itself, but can adapt
-            GC.removePlayerLives(1);
+        print("Im dying....");
+        GC.removePlayerLives(1);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Colliding (player)");
+        if (other.gameObject.name.Equals("enemyKatana"))
+        {
+            removeLife();
         }
     }
 }

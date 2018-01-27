@@ -947,12 +947,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blinn1
-    second: {fileID: 2100000, guid: 7cda9de9fc402fd4fade91ce88423dcb, type: 2}
+    second: {fileID: 2100000, guid: 18f1eaf3686e64a35a54f144ae659930, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert2
-    second: {fileID: 2100000, guid: 5571fa72eebb4fb448a3f3aff553129b, type: 2}
+    second: {fileID: 2100000, guid: c4bfb73fc709c4349952ae14b4537179, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -984,7 +984,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -995,6 +995,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
