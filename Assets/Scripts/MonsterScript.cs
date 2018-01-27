@@ -65,7 +65,7 @@ public class MonsterScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        GetComponentInChildren<Animator>().speed = TimeStopController.instance.timeScale;
+        GetComponentInChildren<Animator>().speed = TimeStopController.timeScale;
         //print((transform.position - target).magnitude);
         if(currentDirection != (int)direction.NO_DIRECTION)
         {

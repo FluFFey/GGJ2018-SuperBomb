@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b213c37b01d0b074195a9e23f516b1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLives: 15
+  remainingBombs: 15
   livesText: {fileID: 0}
   bombsText: {fileID: 0}
   crosshair: {fileID: 0}

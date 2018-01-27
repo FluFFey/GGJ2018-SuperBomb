@@ -9995,6 +9995,11 @@ Prefab:
       propertyPath: remainingBombs
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114445664156429280, guid: b65e422a8c6535046ad17317a6066106,
+        type: 2}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 451600830}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b65e422a8c6535046ad17317a6066106, type: 2}
   m_IsPrefabParent: 0
