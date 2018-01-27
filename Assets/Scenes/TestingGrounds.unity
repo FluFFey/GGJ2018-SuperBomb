@@ -152,11 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114516653218454708, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: TSC
-      value: 
-      objectReference: {fileID: 1110746625}
     - target: {fileID: 114769801196868256, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 2}
       propertyPath: TSC
@@ -167,6 +162,11 @@ Prefab:
       propertyPath: GC
       value: 
       objectReference: {fileID: 133867455}
+    - target: {fileID: 114516653218454708, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: TSC
+      value: 
+      objectReference: {fileID: 1110746625}
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_Name
       value: PlayerPrefab
@@ -1137,12 +1137,12 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114059195049687930, guid: ea1a2b2f80125784bb500bcd48f2146f,
+    - target: {fileID: 114204823914261686, guid: ea1a2b2f80125784bb500bcd48f2146f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 133867455}
-    - target: {fileID: 114204823914261686, guid: ea1a2b2f80125784bb500bcd48f2146f,
+    - target: {fileID: 114059195049687930, guid: ea1a2b2f80125784bb500bcd48f2146f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
