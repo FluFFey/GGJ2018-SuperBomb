@@ -47,9 +47,9 @@ public class TransController : MonoBehaviour {
             other.gameObject.GetComponent<BombController>().recieveTrans();
             Destroy(this.gameObject);
         }
-        else if (other.gameObject.GetComponent<PlayerController>() != null || other.gameObject.GetComponent<TransController>() != null || other.gameObject.tag.Equals("Floor"))
+        else if (other.gameObject.GetComponent<PlayerController>() != null || other.gameObject.GetComponent<TransController>() != null)
         {
-            rb.isKinematic = true;
+            //rb.isKinematic = true;
             //nothing
         }
         else

@@ -54,18 +54,20 @@ public class BombController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
+        print("Bomb collided with: " + other.gameObject.name);
         if(other.gameObject.tag == "Floor")
         {
             rb.velocity = Vector3.zero;
             stuck = true;
         }
-        else if (!other.gameObject.name.Contains("GunPrefab") && !other.gameObject.name.Contains("PlayerPrefab"))
+        else if (other.gameObject.name.Contains("GunPrefab") || other.gameObject.name.Contains("PlayerPrefab"))
         {
-            print("Collider: " + other.gameObject.name);
-            newPositions = new List<Vector3>();
-            useGravity = true;
-            rb.isKinematic = false;
+            return;
         }
+        print("Collider: " + other.gameObject.name);
+        newPositions = new List<Vector3>();
+        useGravity = true;
+        rb.isKinematic = false;
     }
 
     public void recieveTrans()
