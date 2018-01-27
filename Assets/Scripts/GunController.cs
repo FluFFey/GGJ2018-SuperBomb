@@ -85,7 +85,7 @@ public class GunController : MonoBehaviour {
 
     private void timeSkip(float targetScale, int lerpSpeed)
     {
-        TSC.setTimeScale(Mathf.Lerp(TSC.getTimeScale(), targetScale, Time.deltaTime * lerpSpeed));
+        TSC.setTimeScale(Mathf.Lerp(TimeStopController.getTimeScale(), targetScale, Time.deltaTime * lerpSpeed));
     }
 
     public void destroyDots()

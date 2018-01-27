@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour {
     public GameObject pauseGameObj;
     public GameObject select1;
     public GameObject select2;
+    public Text timer;
 
     void Awake()
     {
@@ -38,7 +39,7 @@ public class GameController : MonoBehaviour {
         livesText.text = "Lives: " + playerLives;
         bombsText.text = "Bombs: " + remainingBombs;
 
-        gameOver();
+        //gameOver();
     }
 	
     public void removePlayerLives(int amountToRemove)
@@ -109,6 +110,7 @@ public class GameController : MonoBehaviour {
                 }
             }
         }
+        timer.text = TimeStopController.currentTime.ToString("F2");
 	}
 
     internal void spendBombs(int v)

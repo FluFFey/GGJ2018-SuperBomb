@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         TSC = GameObject.Find("TimeStopController").GetComponent<TimeStopController>();
-	}
+        GC = GameObject.Find("GameController").GetComponent<GameController>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -57,6 +58,13 @@ public class PlayerController : MonoBehaviour {
             lerpSpeed = 4;
         }
 
-        TSC.setTimeScale(Mathf.Lerp(TSC.getTimeScale(), targetScale, Time.deltaTime * lerpSpeed));
+        TSC.setTimeScale(Mathf.Lerp(TimeStopController.getTimeScale(), targetScale, Time.deltaTime * lerpSpeed));
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.name.Contains("Katana")){ //Thinking the weapon is gameobject of itself, but can adapt
+            GC.removePlayerLives(1);
+        }
     }
 }

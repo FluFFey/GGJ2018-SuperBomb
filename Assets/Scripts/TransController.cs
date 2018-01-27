@@ -32,24 +32,30 @@ public class TransController : MonoBehaviour {
         }
         else
         {
-            currentLifeTime -= Time.deltaTime * TSC.timeScale;
+            currentLifeTime -= Time.deltaTime * TimeStopController.timeScale;
         }
 
-        rb.velocity = topVal * TSC.getTimeScale(); //Stop mid air
+        rb.velocity = topVal * TimeStopController.getTimeScale(); //Stop mid air
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        //print("Collision!");
+        print("Collision!");
         if (other.gameObject.GetComponent<BombController>() != null)
         {
             //print("Collision2!");
             other.gameObject.GetComponent<BombController>().recieveTrans();
             Destroy(this.gameObject);
         }
-        else if(!other.gameObject.GetComponent<PlayerController>() && !other.gameObject.GetComponent<TransController>())
+        else if (other.gameObject.GetComponent<PlayerController>() != null || other.gameObject.GetComponent<TransController>() != null || other.gameObject.tag.Equals("Floor"))
+        {
+            rb.isKinematic = true;
+            //nothing
+        }
+        else
         {
             Destroy(this.gameObject);
         }
+
     }
 }
