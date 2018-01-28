@@ -182,6 +182,7 @@
 						return _StripeColor;
 					}
 				}
+				discard;
 				return fixed4(0,0,0,0);
 			}
 			ENDCG
