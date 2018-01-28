@@ -8,6 +8,7 @@ public class GunController : MonoBehaviour {
     public GameObject bombPrefab;
     public GameObject bombPatherPrefab;
     public GameObject gunMuzzle;
+    public GameObject bombSpawn;
 
     public float transCD;
     private float currentTransCD;
@@ -60,10 +61,11 @@ public class GunController : MonoBehaviour {
         if (currentBombCD <= 0)
         {
             //throw
-            GameObject bomb = Instantiate(bombPrefab, gunMuzzle.transform.position, Quaternion.identity);
-            GameObject bombPather = Instantiate(bombPatherPrefab, gunMuzzle.transform.position, Quaternion.identity);
+            GameObject bomb = Instantiate(bombPrefab, bombSpawn.transform.position, Quaternion.identity);
+            GameObject bombPather = Instantiate(bombPatherPrefab, bombSpawn.transform.position, Quaternion.identity);
             bombPather.GetComponent<BombPathController>().myBomb = bomb;
-            //bomb.GetComponent<Rigidbody>().AddForce(transform.forward * bombThrowForce);
+            bomb.transform.GetChild(0).GetComponent<Animator>().SetBool("bombOpen", true);
+
             bombPather.GetComponent<Rigidbody>().AddForce(transform.forward * bombThrowForce);
             currentBombCD = bombCD;
             timeSkip(0.5f, 10);
@@ -77,7 +79,7 @@ public class GunController : MonoBehaviour {
         destroyDots();
 
         Vector3 veloc = transform.forward * bombThrowForce /50;
-        Vector3[] plots = Plot(bombPrefab.GetComponent<Rigidbody>(), gunMuzzle.transform.position, veloc, predictSteps);
+        Vector3[] plots = Plot(bombPrefab.GetComponent<Rigidbody>(), bombSpawn.transform.position, veloc, predictSteps);
         foreach(Vector3 v3 in plots)
         {
             Instantiate(lineDot, v3, this.gameObject.transform.rotation);

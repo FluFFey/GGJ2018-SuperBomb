@@ -52,10 +52,23 @@ public class TransController : MonoBehaviour {
             //rb.isKinematic = true;
             //nothing
         }
+        else if (other.gameObject.tag.Equals("Floor"))
+        {
+            GetComponent<BoxCollider>().isTrigger = true;
+        }
         else
         {
             Destroy(this.gameObject);
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<BombController>() != null)
+        {
+            //print("Collision2!");
+            other.gameObject.GetComponent<BombController>().recieveTrans();
+            Destroy(this.gameObject);
+        }
     }
 }
