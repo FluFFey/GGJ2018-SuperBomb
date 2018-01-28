@@ -53,7 +53,6 @@ GameObject:
   - component: {fileID: 33874637876336266}
   - component: {fileID: 136691526068579810}
   - component: {fileID: 54697898045372136}
-  - component: {fileID: 95870900181870718}
   - component: {fileID: 114346068291089924}
   m_Layer: 9
   m_Name: Enemy Melee
@@ -88,6 +87,7 @@ GameObject:
   - component: {fileID: 4958708557376594}
   - component: {fileID: 33624291520265482}
   - component: {fileID: 23397411756922318}
+  - component: {fileID: 65150136587351608}
   m_Layer: 0
   m_Name: enemyKatana
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672569856377170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1.617}
+  m_LocalPosition: {x: 0, y: -0.67, z: 1.617}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4247348641622582}
@@ -157,13 +157,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1965162209764778}
-  m_LocalRotation: {x: -0.15207274, y: 0.12688193, z: 0.7288304, w: 0.6554244}
-  m_LocalPosition: {x: -0.059, y: -0.033, z: -0.064}
+  m_LocalRotation: {x: -0.6061654, y: -0.48865044, z: 0.55543995, w: 0.2920118}
+  m_LocalPosition: {x: -0.030296084, y: 0.0032593051, z: 0.014681019}
   m_LocalScale: {x: 0.2929408, y: 0.2929408, z: 0.3712783}
   m_Children: []
   m_Father: {fileID: 4673151779405378}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -22.6, y: -3.437, z: 96.758}
+  m_LocalEulerAnglesHint: {x: 10.884001, y: -102.493004, z: 110.99901}
 --- !u!23 &23397411756922318
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -224,27 +224,22 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &95870900181870718
-Animator:
-  serializedVersion: 3
+--- !u!65 &65150136587351608
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1672569856377170}
+  m_GameObject: {fileID: 1965162209764778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ea9d624ab3b0e0340a00f07790a386ab, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 2
+  m_Size: {x: 3.880266, y: 0.21565354, z: 0.21565399}
+  m_Center: {x: 1.2369144, y: 0.05902828, z: 0.15063863}
 --- !u!95 &95951361721451578
 Animator:
   serializedVersion: 3
@@ -254,7 +249,7 @@ Animator:
   m_GameObject: {fileID: 1114937563358196}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 056c10944aa162f49b3dbd6c0bd04e74, type: 3}
-  m_Controller: {fileID: 9100000, guid: 87dc03e5fc98d774e9479c6372b1e8f8, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea9d624ab3b0e0340a00f07790a386ab, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -273,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0952ee2317928e41a087d0a8ed1bd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 4
+  minDistance: 2.5
   speed: 4
   player: {fileID: 0}
   jumpVector: {x: 0, y: 0.1, z: 0}
