@@ -126,7 +126,7 @@ public class MonsterScript : MonoBehaviour {
                 StartCoroutine(Tools.moveObject(
                     gameObject, 
                     newPosChecklist[currentDirection], 
-                    1.0f, 
+                    3.0f, 
                     10, 
                     Tools.INTERPOLATION_TYPE.LERP
                     ));

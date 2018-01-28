@@ -72,7 +72,7 @@
 
 				if (zGridMod < 0.03f|| xGridMod < 0.03f)
 				{
-					return _GridColor*(cos(_ScaledTime)+1)/1.8f+0.2f;
+					return _GridColor*(cos(i.posWorld.x+_ScaledTime)+1)/1.8f+0.2f;
 				}
 
 				//if (zMod > 2.125f && zMod < 2.375f || xMod > 2.125f && xMod < 2.375f)
@@ -85,7 +85,7 @@
 				float zMod = i.posWorld.z%5;
 				float xMod = i.posWorld.x%5;
 				// sample the texture
-				_StripeColor*= (cos((_ScaledTime)*3.14f)+1)/2.0f + _StripeColor*0.2f;
+				_StripeColor*= (cos((8*_ScaledTime+i.posWorld.x+i.posWorld.z))+1.0f)/3.0f + _StripeColor*0.33f;
 				if (_CornerRD ==1.0f)
 				{
 				if (((zMod > 4.7f && zMod < 4.9f && 

@@ -126,4 +126,4 @@ MonoBehaviour:
   lifeTime: 8
   TSC: {fileID: 0}
   startVal: {x: 0, y: 0, z: 0}
-  startValFactor: 13
+  startValFactor: 26

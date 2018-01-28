@@ -55,7 +55,7 @@ Shader "ShowPos Effect Shader"
 				float4 c = tex2D(_MainTex, i.uv);
 
 				//if (i.uv.x %5 ==0) discard;
-                float2 uv = (i.uv.y+_ScaledTime*0.5f) / i.uv.w;
+                float2 uv = (i.uv.y+_ScaledTime*0.1f) / i.uv.w;
 				if((int)(uv*_ScreenParams.y/floor(_LinesSize))%2==0)
 				{
 					return c;
