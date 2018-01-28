@@ -140,7 +140,8 @@ MonoBehaviour:
   pathLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  deathParticleSystem: {fileID: 0}
+  deathParticleSystem: {fileID: 1971410829080352, guid: 58ea3cbeaa333ac47b8b784103584529,
+    type: 2}
   tileLength: 5
 --- !u!136 &136745086369452900
 CapsuleCollider:

@@ -11,7 +11,7 @@ public class BombController : MonoBehaviour {
     private bool stuck;
 
     public TimeStopController TSC;
-
+    public GameObject bombExplosionPS;
     public List<Vector3> newPositions = new List<Vector3>();
     public float timer;
     public bool useGravity = false;
@@ -96,6 +96,7 @@ public class BombController : MonoBehaviour {
                 col.GetComponent<BombController>().startColl();
             }
         }
+        Instantiate(bombExplosionPS).transform.position = transform.position;
         Destroy(this.gameObject);
     }
 

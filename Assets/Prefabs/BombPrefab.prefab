@@ -1062,7 +1062,7 @@ MonoBehaviour:
   exRadius: 5
   exForce: 0
   TSC: {fileID: 0}
-  explosionParticleSystem: {fileID: 1393296224822806, guid: 6c754d8b8ff86ab45a6ba7aaf8987578,
+  bombExplosionPS: {fileID: 1393296224822806, guid: 6c754d8b8ff86ab45a6ba7aaf8987578,
     type: 2}
   newPositions: []
   timer: 0
