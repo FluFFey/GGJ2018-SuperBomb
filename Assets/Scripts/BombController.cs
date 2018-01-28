@@ -5,12 +5,13 @@ using UnityEngine;
 public class BombController : MonoBehaviour {
 
     public int exRadius;
+    public float exForce;
 
     private Rigidbody rb;
     private bool stuck;
 
     public TimeStopController TSC;
-    public GameObject explosionParticleSystem;
+
     public List<Vector3> newPositions = new List<Vector3>();
     public float timer;
     public bool useGravity = false;
@@ -40,6 +41,7 @@ public class BombController : MonoBehaviour {
 
         if (stuck)
         {
+            print("hello?");
             rb.velocity = Vector3.zero;
             useGravity = true;
         }
@@ -48,14 +50,12 @@ public class BombController : MonoBehaviour {
 
         if (useGravity)
         {
+            print("hello");
+            transform.GetChild(0).GetComponent<Animator>().SetBool("bombOpen", true);
             rb.AddForce(Physics.gravity * TimeStopController.getTimeScale());
         }
-        //if (transform.position.y < 0.40f)
-        //{
-        //    Vector3 newPos = transform.position;
-        //    newPos.y = 0.40f;
-        //    transform.position = newPos;
-        //}
+
+        transform.GetChild(0).GetComponent<Animator>().speed = 1 * TimeStopController.timeScale;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -87,9 +87,7 @@ public class BombController : MonoBehaviour {
             {
                 //MonsterScript MS = col.GetComponent<MonsterScript>();
                 //MS.dealDmg(1); //Deal 1 dmg, assuming regular enemies have 1hp, bigger have 2
-
                 Destroy(col.gameObject);
-                
             }
             if(col && col.gameObject.name.Contains("BombPrefab") && col.gameObject != this.gameObject)
             {
@@ -98,8 +96,6 @@ public class BombController : MonoBehaviour {
                 col.GetComponent<BombController>().startColl();
             }
         }
-        Instantiate(explosionParticleSystem).transform.position = transform.position;
-
         Destroy(this.gameObject);
     }
 

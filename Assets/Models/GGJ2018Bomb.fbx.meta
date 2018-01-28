@@ -73,6 +73,20 @@ ModelImporter:
     4300020: BombPeg.002
     4300022: BombPeg.001
     4300024: Bomb
+    6400000: Bomb
+    6400002: BombPeg.001
+    6400004: BombPeg.002
+    6400006: BombPeg.003
+    6400008: BombPeg.004
+    6400010: BombPeg.005
+    6400012: BombPeg.006
+    6400014: BombPeg.007
+    6400016: BombPeg.008
+    6400018: BombPeg.009
+    6400020: BombPeg.010
+    6400022: BombPeg.011
+    6400024: BombPeg.012
+    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -97,7 +111,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -149,10 +163,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

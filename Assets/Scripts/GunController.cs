@@ -8,6 +8,7 @@ public class GunController : MonoBehaviour {
     public GameObject bombPrefab;
     public GameObject bombPatherPrefab;
     public GameObject gunMuzzle;
+    public GameObject bombSpawn;
 
     public float transCD;
     private float currentTransCD;
@@ -45,28 +46,30 @@ public class GunController : MonoBehaviour {
         {
             //shoot
             GameObject trans = Instantiate(transPrefab, gunMuzzle.transform.position, Quaternion.identity);
-            trans.transform.rotation = this.gameObject.transform.rotation;
-            trans.GetComponent<Rigidbody>().AddForce(transform.forward * transShootForce);
-            trans.GetComponent<TransController>().startVal = transform.forward;
+            trans.transform.rotation = gunMuzzle.transform.rotation;
+            trans.GetComponent<Rigidbody>().AddForce(gunMuzzle.transform.forward * transShootForce);
+            trans.GetComponent<TransController>().startVal = gunMuzzle.transform.forward;
             currentTransCD = transCD;
-            timeSkip(0.5f, 10);
+            //timeSkip(0.5f, 10);
             return true;
         }
         return false;
     }
 
-    public bool throwBomb()
+    public bool throwBomb(Animator anim)
     {
         if (currentBombCD <= 0)
         {
             //throw
-            GameObject bomb = Instantiate(bombPrefab, gunMuzzle.transform.position, Quaternion.identity);
-            GameObject bombPather = Instantiate(bombPatherPrefab, gunMuzzle.transform.position, Quaternion.identity);
+            GameObject bomb = Instantiate(bombPrefab, bombSpawn.transform.position, Quaternion.identity);
+            GameObject bombPather = Instantiate(bombPatherPrefab, bombSpawn.transform.position, Quaternion.identity);
             bombPather.GetComponent<BombPathController>().myBomb = bomb;
-            //bomb.GetComponent<Rigidbody>().AddForce(transform.forward * bombThrowForce);
-            bombPather.GetComponent<Rigidbody>().AddForce(transform.forward * bombThrowForce);
+            bomb.transform.GetChild(0).GetComponent<Animator>().SetBool("bombOpen", true);
+
+            bombPather.GetComponent<Rigidbody>().AddForce(bombSpawn.transform.forward * bombThrowForce);
             currentBombCD = bombCD;
-            timeSkip(0.5f, 10);
+            //timeSkip(0.5f, 10);
+            anim.Play("BombThrow");
             return true;
         }
         return false;
@@ -76,17 +79,18 @@ public class GunController : MonoBehaviour {
     {
         destroyDots();
 
-        Vector3 veloc = transform.forward * bombThrowForce /50;
-        Vector3[] plots = Plot(bombPrefab.GetComponent<Rigidbody>(), gunMuzzle.transform.position, veloc, predictSteps);
+        print(bombSpawn.transform.forward);
+        Vector3 veloc = bombSpawn.transform.forward * bombThrowForce /50;
+        Vector3[] plots = Plot(bombPrefab.GetComponent<Rigidbody>(), bombSpawn.transform.position, veloc, predictSteps);
         foreach(Vector3 v3 in plots)
         {
-            Instantiate(lineDot, v3, this.gameObject.transform.rotation);
+            Instantiate(lineDot, v3, bombSpawn.transform.rotation);
         }
     }
 
     private void timeSkip(float targetScale, int lerpSpeed)
     {
-        TSC.setTimeScale(Mathf.Lerp(TimeStopController.getTimeScale(), targetScale, Time.deltaTime * lerpSpeed));
+        TSC.setTimeScale(Mathf.Lerp(TimeStopController.timeScale, targetScale, Time.deltaTime * lerpSpeed));
     }
 
     public void destroyDots()
