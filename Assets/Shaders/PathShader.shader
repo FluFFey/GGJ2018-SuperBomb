@@ -21,7 +21,7 @@
 
 		Pass
 		{
-			Blend One One
+			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -182,6 +182,7 @@
 						return _StripeColor;
 					}
 				}
+				discard;
 				return fixed4(0,0,0,0);
 			}
 			ENDCG

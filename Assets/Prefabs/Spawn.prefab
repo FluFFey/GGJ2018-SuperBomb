@@ -297,7 +297,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 8
+  enemyInterval: 16
   enemGO: {fileID: 1968698969084242, guid: d893d78640d8adc439f0319808533c67, type: 2}
+  attackerGO: {fileID: 1672569856377170, guid: 256146e68cbdc9349a20b6aaac217413, type: 2}
 --- !u!114 &114609140300259318
 MonoBehaviour:
   m_ObjectHideFlags: 1

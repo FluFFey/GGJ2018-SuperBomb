@@ -15,6 +15,7 @@
 
 		Pass
 		{
+			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -99,8 +100,8 @@
 					{
 						return _StripeColor;	
 					}
+					discard;
 
-					return fixed4(0,0,0,0);
 				}
 
 				if (i.posWorld.y > 1.7f && i.posWorld.y < 2.0f ||
@@ -109,7 +110,7 @@
 				{
 					return _StripeColor;
 				}
-
+				discard;
 				// apply fog
 				return fixed4(0,0,0,0);
 			}
