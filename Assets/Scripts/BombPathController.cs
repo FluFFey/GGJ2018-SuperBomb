@@ -27,7 +27,10 @@ public class BombPathController : MonoBehaviour {
 
         if (timer >= 0.01667f /128)
         {
-            myBomb.GetComponent<BombController>().newPositions.Add(transform.position);
+            if (myBomb != null)
+            {
+                myBomb.GetComponent<BombController>().newPositions.Add(transform.position);
+            }
             timer += Time.deltaTime - 0.01667f /128;
         }
         else

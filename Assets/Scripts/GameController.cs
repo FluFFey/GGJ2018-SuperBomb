@@ -35,14 +35,14 @@ public class GameController : MonoBehaviour {
     void Start ()
     {
         Time.timeScale = 1;
-        livesText.text = "Lives: " + playerLives;
-        bombsText.text = "Bombs: " + remainingBombs;
+        livesText.text = playerLives.ToString();
+        bombsText.text = remainingBombs.ToString();
     }
 	
     public void removePlayerLives(int amountToRemove)
     {
         playerLives -= amountToRemove;
-        livesText.text = "Lives: " + playerLives;
+        livesText.text = playerLives.ToString();
         if (playerLives <= 0)
         {
             gameOver();
@@ -123,13 +123,13 @@ public class GameController : MonoBehaviour {
     internal void spendBombs(int v)
     {
         remainingBombs -= v;
-        bombsText.text = "Bombs: " + remainingBombs;
+        bombsText.text = remainingBombs.ToString();
     }
 
     internal void gainBombs(int v)
     {
         remainingBombs += v;
-        bombsText.text = "Bombs: " + remainingBombs;
+        bombsText.text = remainingBombs.ToString();
     }
 
     public void mainMenuClick()

@@ -47,8 +47,8 @@ public class GunController : MonoBehaviour {
             //shoot
             GameObject trans = Instantiate(transPrefab, gunMuzzle.transform.position, Quaternion.identity);
             trans.transform.rotation = gunMuzzle.transform.rotation;
-            trans.GetComponent<Rigidbody>().AddForce(gunMuzzle.transform.forward * transShootForce);
-            trans.GetComponent<TransController>().startVal = gunMuzzle.transform.forward;
+            //trans.GetComponent<Rigidbody>().AddForce(gunMuzzle.transform.forward * transShootForce);
+            trans.GetComponent<TransController>().startVal = transform.parent.parent.parent.transform.forward;
             currentTransCD = transCD;
             //timeSkip(0.5f, 10);
             return true;

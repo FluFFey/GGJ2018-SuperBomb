@@ -96,7 +96,11 @@ public class BombController : MonoBehaviour {
                 col.GetComponent<BombController>().startColl();
             }
         }
-        Instantiate(bombExplosionPS).transform.position = transform.position;
+        if (bombExplosionPS != null)
+        {
+            Instantiate(bombExplosionPS).transform.position = transform.position;
+        }
+        
         Destroy(this.gameObject);
     }
 

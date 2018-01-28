@@ -38,29 +38,29 @@ public class TransController : MonoBehaviour {
         rb.velocity = topVal * TimeStopController.getTimeScale(); //Stop mid air
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        print("Collision!");
-        if (other.gameObject.GetComponent<BombController>() != null)
-        {
-            //print("Collision2!");
-            other.gameObject.GetComponent<BombController>().recieveTrans();
-            Destroy(this.gameObject);
-        }
-        else if (other.gameObject.GetComponent<PlayerController>() != null || other.gameObject.GetComponent<TransController>() != null)
-        {
-            //rb.isKinematic = true;
-            //nothing
-        }
-        else if (other.gameObject.tag.Equals("Floor"))
-        {
-            GetComponent<BoxCollider>().isTrigger = true;
-        }
-        else
-        {
-            //Destroy(this.gameObject);
-        }
-    }
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    //print("Collision!");
+    //    if (other.gameObject.GetComponent<BombController>() != null)
+    //    {
+    //        //print("Collision2!");
+    //        other.gameObject.GetComponent<BombController>().recieveTrans();
+    //        Destroy(this.gameObject);
+    //    }
+    //    else if (other.gameObject.GetComponent<PlayerController>() != null || other.gameObject.GetComponent<TransController>() != null)
+    //    {
+    //        //rb.isKinematic = true;
+    //        //nothing
+    //    }
+    //    else if (other.gameObject.tag.Equals("Floor"))
+    //    {
+    //        //GetComponent<BoxCollider>().isTrigger = true;
+    //    }
+    //    else
+    //    {
+    //        //Destroy(this.gameObject);
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

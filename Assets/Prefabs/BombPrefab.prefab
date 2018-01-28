@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9af707b4ca240499dfceae83320763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exRadius: 5
+  exRadius: 7
   exForce: 0
   TSC: {fileID: 0}
   bombExplosionPS: {fileID: 1393296224822806, guid: 6c754d8b8ff86ab45a6ba7aaf8987578,

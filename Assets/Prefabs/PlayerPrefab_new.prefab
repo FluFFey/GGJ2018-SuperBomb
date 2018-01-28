@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 81917298689396392}
   - component: {fileID: 124225542171255656}
   - component: {fileID: 114725796067064920}
+  - component: {fileID: 114067990759098504}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -862,8 +863,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1102305245141002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.008, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 36, y: 0, z: 40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4062119253686896}
@@ -871,7 +872,7 @@ Transform:
   - {fileID: 4547075463961624}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!4 &4802556443559464
 Transform:
   m_ObjectHideFlags: 1
@@ -1050,7 +1051,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100
+  far clip plane: 5000
   field of view: 40
   orthographic: 0
   orthographic size: 5
@@ -1908,7 +1909,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1972,6 +1973,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114067990759098504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979238244920354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca991069e318f8649bb973f9da97ecfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scanLinesMat: {fileID: 2100000, guid: 798ae53c32ea1a448b4cdbe6e3968845, type: 2}
 --- !u!114 &114136492817577530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2096,8 +2109,8 @@ MonoBehaviour:
   bombSpawn: {fileID: 1270387720120752}
   transCD: 0
   bombCD: 0.2
-  transShootForce: 500
-  bombThrowForce: 500
+  transShootForce: 1250
+  bombThrowForce: 750
   lineDot: {fileID: 1983153100817750, guid: be298aa718bb19f4ea98b23a2d5ff294, type: 2}
   predictSteps: 100
 --- !u!114 &114382513678471396
@@ -2114,6 +2127,7 @@ MonoBehaviour:
   exRadius: 5
   exForce: 0
   TSC: {fileID: 0}
+  bombExplosionPS: {fileID: 0}
   newPositions: []
   timer: 0
   useGravity: 0

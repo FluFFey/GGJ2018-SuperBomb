@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.GetChild(1).GetComponent<Animator>().speed = 1 * TimeStopController.timeScale;
+        //GetComponentInChildren<Animator>().speed = TimeStopController.timeScale;
 
+        transform.GetChild(1).GetComponent<Animator>().speed = 1 * TimeStopController.timeScale;
+        transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>().speed = TimeStopController.timeScale;
         int lerpSpeed = 10;
         float targetScale = 1;
         if (Input.GetKeyUp(KeyCode.Mouse0) && !GC.pauseGameObj.activeSelf && !GC.gameOverObj.activeSelf)

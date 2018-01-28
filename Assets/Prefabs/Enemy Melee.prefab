@@ -272,7 +272,7 @@ MonoBehaviour:
   speed: 4
   player: {fileID: 0}
   jumpVector: {x: 0, y: 0.1, z: 0}
-  deathParticleSystem: {fileID: 1971410829080352, guid: 58ea3cbeaa333ac47b8b784103584529,
+  deathParticleSystem: {fileID: 1749062232262202, guid: 9103b5d3870f5084e85c8e73b2d606b7,
     type: 2}
 --- !u!136 &136691526068579810
 CapsuleCollider:
