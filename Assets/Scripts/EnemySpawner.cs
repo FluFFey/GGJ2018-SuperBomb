@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour {
     float timeSinceLastEnemySpawn = 0.0f;
     public GameObject enemGO;
     public GameObject attackerGO;
+    
     // Use this for initialization
     void Start ()
     {
@@ -28,6 +29,7 @@ public class EnemySpawner : MonoBehaviour {
     void Update()
     {
         timeSinceLastSpawn += TimeStopController.deltaTime();
+        timeSinceLastEnemySpawn += TimeStopController.deltaTime();
         if (timeSinceLastSpawn > spawnInterval)
         {
             timeSinceLastSpawn = 0.0f;
@@ -48,9 +50,14 @@ public class EnemySpawner : MonoBehaviour {
             {
                 enemyInterval *= 0.97f;
             }
-            Instantiate(attackerGO, transform).transform.localScale = new Vector3(2, 1, 2); //new Vector3(2 * 1.5f, 1 * 1.5f, 2 * 1.5f);
+            GameObject newGO = Instantiate(attackerGO, transform);
+            newGO.transform.localScale = new Vector3(2, 1, 2);
+            Vector3 newPos = newGO.transform.position;
+            newPos.y = 1.25f;
+            newGO.transform.position = newPos;
             //GameObject newGo = Instantiate(attackerGO, transform.position, Quaternion.identity);
             //    newGo.transform.position = new Vector3(newGo.transform.position.x, 1.4f, newGo.transform.position.z);
         }
     }
+    
 }

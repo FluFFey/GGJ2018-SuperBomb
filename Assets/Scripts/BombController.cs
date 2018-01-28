@@ -5,6 +5,7 @@ using UnityEngine;
 public class BombController : MonoBehaviour {
 
     public int exRadius;
+    public float exForce;
 
     private Rigidbody rb;
     private bool stuck;
@@ -40,6 +41,7 @@ public class BombController : MonoBehaviour {
 
         if (stuck)
         {
+            print("hello?");
             rb.velocity = Vector3.zero;
             useGravity = true;
         }
@@ -48,8 +50,12 @@ public class BombController : MonoBehaviour {
 
         if (useGravity)
         {
+            print("hello");
+            transform.GetChild(0).GetComponent<Animator>().SetBool("bombOpen", true);
             rb.AddForce(Physics.gravity * TimeStopController.getTimeScale());
         }
+
+        transform.GetChild(0).GetComponent<Animator>().speed = 1 * TimeStopController.timeScale;
     }
 
     private void OnCollisionEnter(Collision other)

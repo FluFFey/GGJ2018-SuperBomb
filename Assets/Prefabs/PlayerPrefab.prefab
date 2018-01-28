@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 54802920239900626}
   - component: {fileID: 82328387928603216}
   - component: {fileID: 114316532461285268}
+  - component: {fileID: 114386676939566556}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -94,6 +95,7 @@ GameObject:
   - component: {fileID: 20018331375018440}
   - component: {fileID: 81950326709639854}
   - component: {fileID: 124890556656597830}
+  - component: {fileID: 114495166494124924}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -162,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1048685016395834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: -10}
+  m_LocalPosition: {x: 36, y: 0, z: 40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4017753857913092}
@@ -415,6 +417,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunPrefab: {fileID: 1011777325367346}
   TSC: {fileID: 0}
+  GC: {fileID: 0}
+--- !u!114 &114386676939566556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048685016395834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50be925033cb447eea0a2d244865d360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: event:/Music/Stage/SuperBombStage3
+--- !u!114 &114495166494124924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988385044050716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca991069e318f8649bb973f9da97ecfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scanLinesMat: {fileID: 2100000, guid: 798ae53c32ea1a448b4cdbe6e3968845, type: 2}
 --- !u!114 &114620132524302852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,6 +456,8 @@ MonoBehaviour:
   transPrefab: {fileID: 1145922016780870, guid: e3e8215f1ca012b46afa9b6eada28402,
     type: 2}
   bombPrefab: {fileID: 1429322451389740, guid: 7b3fe5fa989481445b9ef09bba536757, type: 2}
+  bombPatherPrefab: {fileID: 1933638454153144, guid: 6baf0fd6e32fbd344a6615fdd9a818b5,
+    type: 2}
   gunMuzzle: {fileID: 1902011674676186}
   transCD: 1
   bombCD: 1
