@@ -6,7 +6,7 @@ Shader "ShowPos Effect Shader"
     Properties
     {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
-		_Color("Color", Color) = (0,0,0,1) 
+		//_Color("Color", Color) = (0,0,0,1) 
 		_LinesSize("LinesSize", Range(1,10)) = 1 
 		_ScaledTime("ScaledTime", float) = 1
     }
@@ -24,7 +24,7 @@ Shader "ShowPos Effect Shader"
             #pragma fragmentoption ARB_precision_hint_fastest
             #include "UnityCG.cginc"
  
-			fixed4 _Color;
+			//fixed4 _Color;
 			half _LinesSize;
 			uniform sampler2D _MainTex;
 			float _ScaledTime;
@@ -60,7 +60,7 @@ Shader "ShowPos Effect Shader"
 				{
 					return c;
 				}
-				return c*0.75f;
+				return c*0.5f;
 				//return c_Color; 
             }
  

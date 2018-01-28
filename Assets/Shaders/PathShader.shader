@@ -13,7 +13,6 @@
 		[Toggle]_VerticalLine("Vertical", Float) = 0
 		[Toggle]_IsCrossSection("Cross", Float) = 0
 		_ScaledTime("ScaledTime", float) = 1
-
 	}
 	SubShader
 	{
@@ -70,21 +69,20 @@
 				float zGridMod = i.posWorld.z%3;
 				float xGridMod = i.posWorld.x%3;
 
-				if (zGridMod < 0.03f|| xGridMod < 0.03f)
+				if (i.posWorld.z%10 < 1.0f && i.posWorld.x%10 < 1.0f)
 				{
-					return _GridColor*(cos(i.posWorld.x+_ScaledTime)+1)/1.8f+0.2f;
+					//return fixed4(1,1,1,1);
+					//return fixed4(0.5f,0.5f,0.5f,0.5f);
 				}
 
-				//if (zMod > 2.125f && zMod < 2.375f || xMod > 2.125f && xMod < 2.375f)
-				//{
-				//	return _StripeColor;
-				//}
-
-
+				if (zGridMod < 0.075f || xGridMod < 0.075f)
+				{
+					return _GridColor*0.75 + _GridColor*((cos(i.posWorld.x+i.posWorld.z+_ScaledTime*16)))*0.2f;//+1.0f)/2.0f);
+				}
 
 				float zMod = i.posWorld.z%5;
 				float xMod = i.posWorld.x%5;
-				// sample the texture
+
 				_StripeColor*= (cos((8*_ScaledTime+i.posWorld.x+i.posWorld.z))+1.0f)/3.0f + _StripeColor*0.33f;
 				if (_CornerRD ==1.0f)
 				{
