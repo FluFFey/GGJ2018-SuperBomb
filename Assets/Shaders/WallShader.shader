@@ -52,8 +52,7 @@
 			{
 				float zMod = i.posWorld.z%5;
 				float xMod = i.posWorld.x%5;
-				// sample the texture
-				_StripeColor*= ((cos(_ScaledTime)+1)/2.0f) + fixed4(_StripeColor.x,_StripeColor.y*0.9f,_StripeColor.z*0.9f,_StripeColor.a);
+				_StripeColor*= ((cos(8*_ScaledTime+i.posWorld.x+i.posWorld.z)+1)/2.0f) + fixed4(_StripeColor.x,_StripeColor.y*0.9f,_StripeColor.z*0.9f,_StripeColor.a);
 				
 				if (_IsDoor)
 				{

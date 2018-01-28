@@ -13,7 +13,8 @@ public class Tile : MonoBehaviour {
         CORNER_LD,
         CORNER_RU,
         CORNER_RD,
-        CROSS_SECTION
+        CROSS_SECTION,
+        NO_PATH
     }
 
 
