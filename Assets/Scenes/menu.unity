@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event: event:/Music/SuperBombMenu
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
@@ -250,7 +250,7 @@ Prefab:
     - target: {fileID: 224348346677396416, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 42.95405
+      value: 110.18646
       objectReference: {fileID: 0}
     - target: {fileID: 224348346677396416, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
@@ -260,7 +260,7 @@ Prefab:
     - target: {fileID: 224348346677396416, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 85.9081
+      value: 220.37292
       objectReference: {fileID: 0}
     - target: {fileID: 224348346677396416, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
@@ -280,7 +280,7 @@ Prefab:
     - target: {fileID: 224362589903725500, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 42.95405
+      value: 110.18646
       objectReference: {fileID: 0}
     - target: {fileID: 224362589903725500, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
@@ -290,7 +290,7 @@ Prefab:
     - target: {fileID: 224362589903725500, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 85.9081
+      value: 220.37292
       objectReference: {fileID: 0}
     - target: {fileID: 224362589903725500, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
@@ -310,7 +310,7 @@ Prefab:
     - target: {fileID: 224444998920424352, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 42.95405
+      value: 110.18646
       objectReference: {fileID: 0}
     - target: {fileID: 224444998920424352, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
@@ -320,7 +320,7 @@ Prefab:
     - target: {fileID: 224444998920424352, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 85.9081
+      value: 220.37292
       objectReference: {fileID: 0}
     - target: {fileID: 224444998920424352, guid: 9c0eb1478e48d9d42aba02c7c615df84,
         type: 2}
@@ -353,6 +353,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: a7ec16aadd38d0e4588227da5f414105,
         type: 3}
+    - target: {fileID: 114626449534264646, guid: 9c0eb1478e48d9d42aba02c7c615df84,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114327745799434280, guid: 9c0eb1478e48d9d42aba02c7c615df84, type: 2}
     - {fileID: 82300521192449896, guid: 9c0eb1478e48d9d42aba02c7c615df84, type: 2}

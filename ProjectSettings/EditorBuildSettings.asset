@@ -6,5 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: ca21ab98d7dfa2541b16cb43c3ed5f40
+  - enabled: 1
     path: Assets/Scenes/pathfinding-test.unity
     guid: 396f5f64e489b1c4b8c492e95758e994
+  - enabled: 1
+    path: Assets/Scenes/TestArt_Havard.unity
+    guid: 422d2c2fd6cf0aa49be0a0f2ae3074ac

@@ -42,29 +42,32 @@ public class StartOptions : MonoBehaviour {
 
 	public void StartButtonClicked()
 	{
-		//If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic
-		//To change fade time, change length of animation "FadeToColor"
-		if (menuSettingsData.musicLoopToChangeTo != null) 
-		{
-			playMusic.FadeDown(menuSettingsData.menuFadeTime);
-		}
+        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        //Destroy(this);
+        //If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic
+        //To change fade time, change length of animation "FadeToColor"
+  //      if (menuSettingsData.musicLoopToChangeTo != null) 
+		//{
+		//	playMusic.FadeDown(menuSettingsData.menuFadeTime);
+		//}
 
 		//If changeScenes is true, start fading and change scenes halfway through animation when screen is blocked by FadeImage
-		if (menuSettingsData.nextSceneIndex != 0) 
-		{
-			//Use invoke to delay calling of LoadDelayed by half the length of fadeColorAnimationClip
-			Invoke ("LoadDelayed", menuSettingsData.menuFadeTime);
+		//if (menuSettingsData.nextSceneIndex != 0) 
+		//{
+		//	//Use invoke to delay calling of LoadDelayed by half the length of fadeColorAnimationClip
+		//	Invoke ("LoadDelayed", menuSettingsData.menuFadeTime);
 
-            StartCoroutine(FadeCanvasGroupAlpha(0f, 1f, fadeOutImageCanvasGroup));
+  //          StartCoroutine(FadeCanvasGroupAlpha(0f, 1f, fadeOutImageCanvasGroup));
 
-        } 
+  //      } 
 
 		//If changeScenes is false, call StartGameInScene
-		else 
-		{
-			//Call the StartGameInScene function to start game without loading a new scene.
-			StartGameInScene();
-		}
+		//else 
+		//{
+		//	//Call the StartGameInScene function to start game without loading a new scene.
+		//	StartGameInScene();
+		//}
 
 	}
 
