@@ -88,16 +88,16 @@ Material:
     m_Colors:
     - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_B: {r: 0.6137929, g: 0, b: 1, a: 1}
-    - _Color1_F: {r: 0.6137929, g: 0, b: 1, a: 1}
-    - _Color1_L: {r: 0.986207, g: 0, b: 1, a: 1}
-    - _Color1_R: {r: 1, g: 0, b: 0.93103456, a: 1}
-    - _Color2_B: {r: 0, g: 0, b: 0, a: 1}
-    - _Color2_F: {r: 0, g: 0, b: 0, a: 1}
-    - _Color2_L: {r: 0, g: 0, b: 0, a: 1}
-    - _Color2_R: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_D: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_T: {r: 1, g: 0, b: 0, a: 1}
+    - _Color1_B: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_F: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_L: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_R: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_B: {r: 1, g: 0, b: 0.93103504, a: 1}
+    - _Color2_F: {r: 1, g: 0, b: 0.8896551, a: 1}
+    - _Color2_L: {r: 1, g: 0, b: 0.972414, a: 1}
+    - _Color2_R: {r: 1, g: 0, b: 0.972414, a: 1}
+    - _Color_D: {r: 0.73853195, g: 0.012002607, b: 0.8161765, a: 1}
+    - _Color_T: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LMColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
