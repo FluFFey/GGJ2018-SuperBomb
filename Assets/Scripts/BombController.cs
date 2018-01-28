@@ -50,6 +50,12 @@ public class BombController : MonoBehaviour {
         {
             rb.AddForce(Physics.gravity * TimeStopController.getTimeScale());
         }
+        //if (transform.position.y < 0.40f)
+        //{
+        //    Vector3 newPos = transform.position;
+        //    newPos.y = 0.40f;
+        //    transform.position = newPos;
+        //}
     }
 
     private void OnCollisionEnter(Collision other)
