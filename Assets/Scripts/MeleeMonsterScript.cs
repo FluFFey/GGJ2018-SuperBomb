@@ -12,8 +12,8 @@ public class MeleeMonsterScript : MonoBehaviour {
     private Rigidbody rb;
     private bool jump;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         //rb = GetComponent<Rigidbody>();
 	}
