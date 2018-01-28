@@ -37,6 +37,7 @@ public class MonsterScript : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        //transform.position = new Vector3(transform.position.x, 1.4f, transform.position.z);
         //print("start");
         findNewTarget(false);
         switch (currentDirection)
@@ -112,7 +113,7 @@ public class MonsterScript : MonoBehaviour {
                     break;
             }
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + newPosChecklist[i% newPosChecklist.Length]* tileLength + Vector3.up, Vector3.down, out hit, 2, pathLayerMask))
+            if (Physics.Raycast(transform.position + newPosChecklist[i% newPosChecklist.Length] * tileLength + Vector3.up, Vector3.down, out hit, 4, pathLayerMask))
             {
                 if (rotate)
                 {
