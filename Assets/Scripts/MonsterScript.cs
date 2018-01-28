@@ -7,6 +7,7 @@ public class MonsterScript : MonoBehaviour {
     public LayerMask pathLayerMask;
     private int lives = 1;
     private int damage = 1;
+    public GameObject deathParticleSystem;
     enum direction
     {
         LEFT,
@@ -31,6 +32,7 @@ public class MonsterScript : MonoBehaviour {
         if (lives <=0)
         {
             DestroyObject(gameObject);
+            Instantiate(deathParticleSystem).transform.position = transform.position;
         }
     }
 
@@ -204,4 +206,10 @@ public class MonsterScript : MonoBehaviour {
         //}
 
     }
+
+    private void OnDestroy()
+    {
+        Instantiate(deathParticleSystem).transform.position = transform.position;
+    }
+
 }

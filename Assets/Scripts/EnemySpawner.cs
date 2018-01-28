@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour {
     float timeSinceLastEnemySpawn = 0.0f;
     public GameObject enemGO;
     public GameObject attackerGO;
+    
     // Use this for initialization
     void Start ()
     {
@@ -58,4 +59,5 @@ public class EnemySpawner : MonoBehaviour {
             //    newGo.transform.position = new Vector3(newGo.transform.position.x, 1.4f, newGo.transform.position.z);
         }
     }
+    
 }

@@ -140,6 +140,7 @@ MonoBehaviour:
   pathLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  deathParticleSystem: {fileID: 0}
   tileLength: 5
 --- !u!136 &136745086369452900
 CapsuleCollider:

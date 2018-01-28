@@ -11,6 +11,8 @@ public class MeleeMonsterScript : MonoBehaviour {
 
     private Rigidbody rb;
     private bool jump;
+    public GameObject deathParticleSystem;
+    
 
     // Use this for initialization
     void Start () {
@@ -61,6 +63,11 @@ public class MeleeMonsterScript : MonoBehaviour {
         }
         //rb.AddForce(Physics.gravity * TimeStopController.timeScale);
 	}
+
+    private void OnDestroy()
+    {
+        Instantiate(deathParticleSystem).transform.position = transform.position;
+    }
 
     private void OnCollisionStay(Collision other)
     {

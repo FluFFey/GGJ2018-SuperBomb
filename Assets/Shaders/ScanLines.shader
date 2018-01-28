@@ -60,7 +60,7 @@ Shader "ShowPos Effect Shader"
 				{
 					return c;
 				}
-				return c*0.5f;
+				return c*0.667f;
 				//return c_Color; 
             }
  

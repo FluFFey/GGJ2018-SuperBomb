@@ -10,7 +10,7 @@ public class BombController : MonoBehaviour {
     private bool stuck;
 
     public TimeStopController TSC;
-
+    public GameObject explosionParticleSystem;
     public List<Vector3> newPositions = new List<Vector3>();
     public float timer;
     public bool useGravity = false;
@@ -87,7 +87,9 @@ public class BombController : MonoBehaviour {
             {
                 //MonsterScript MS = col.GetComponent<MonsterScript>();
                 //MS.dealDmg(1); //Deal 1 dmg, assuming regular enemies have 1hp, bigger have 2
+
                 Destroy(col.gameObject);
+                
             }
             if(col && col.gameObject.name.Contains("BombPrefab") && col.gameObject != this.gameObject)
             {
@@ -96,6 +98,8 @@ public class BombController : MonoBehaviour {
                 col.GetComponent<BombController>().startColl();
             }
         }
+        Instantiate(explosionParticleSystem).transform.position = transform.position;
+
         Destroy(this.gameObject);
     }
 
