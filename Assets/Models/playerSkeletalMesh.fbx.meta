@@ -705,9 +705,11 @@ ModelImporter:
     2300000: Gun_Gun
     2300002: krafthansken1
     2300004: krafthansken2
+    2300006: armer
     3300000: Gun_Gun
     3300002: krafthansken1
     3300004: krafthansken2
+    3300006: armer
     4300000: armer
     4300002: Gun_Gun
     4300004: krafthansken2
@@ -753,7 +755,9 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R
+    - Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L
     extraUserProperties: []
     clipAnimations: []
     isReadable: 1
@@ -772,6 +776,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
